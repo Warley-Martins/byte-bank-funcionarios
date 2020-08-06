@@ -3,3 +3,7 @@
 ################################################################################
 
 /src/_2_ByteBank/.vs
+/src/_2_ByteBank/bin/Debug/netcoreapp3.1
+/src/_2_ByteBank/obj
+/src/.vs/_2_ByteBank/v16
+/src/ClassLibrary1/obj
