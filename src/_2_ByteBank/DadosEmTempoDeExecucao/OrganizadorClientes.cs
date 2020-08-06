@@ -5,9 +5,9 @@ using System.Text;
 
 namespace _2_ByteBank.BancoDeDados
 {
-    public class OrganizadorClientes : ILogarCliente
+    public static class OrganizadorClientes : ILogarCliente
     {
-        internal List<Cliente> clientes = new List<Cliente>();
+        internal static  List<Cliente> clientes = new List<Cliente>();
 
         public OrganizadorClientes()
         {

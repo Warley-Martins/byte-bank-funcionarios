@@ -26,20 +26,15 @@ namespace _2_ByteBank.Funcionarios
         private OrganizadorClientes organizadorClientes = new OrganizadorClientes();
         private OrganizadorFuncionarios organizadorFuncionarios = new OrganizadorFuncionarios();
 
-        public void ContratrarFuncionario(Funcionario FuncionarioContratado)
+        public void ContratrarFuncionario(Funcionario funcionarioContratado)
         {
-            if(FuncionarioContratado == null)
-            {
-                throw new NullReferenceException("Referencia não definida para funcionario");
-            }
-            organizadorFuncionarios.funcionarios.Add(FuncionarioContratado);
+            ValidarFuncionario(funcionarioContratado);
+            organizadorFuncionarios.funcionarios.Add(funcionarioContratado);
         }
+
         public void DemitirFuncionario(Funcionario funcionarioDemitido)
         {
-            if (funcionarioDemitido == null)
-            {
-                throw new NullReferenceException("Referencia não definida para funcionario");
-            }
+            ValidarFuncionario(funcionarioDemitido);
             organizadorFuncionarios.funcionarios.Remove(funcionarioDemitido);
         }
         public Funcionario ProcurarFuncionario(string cpfFuncionarioProcurado)
@@ -103,6 +98,14 @@ namespace _2_ByteBank.Funcionarios
         }
         public void PrintarContasBancarias()
         {
+        }
+
+        private static void ValidarFuncionario(Funcionario funcionario)
+        {
+            if (funcionario == null)
+            {
+                throw new NullReferenceException("Referencia não definida para funcionario");
+            }
         }
     }
 }
