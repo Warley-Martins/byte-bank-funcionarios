@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_2_ByteBank", "_2_ByteBank\_2_ByteBank.csproj", "{C40C1C04-3DA3-4301-8A7F-E955740936CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{29A30051-BB3E-4B50-8F79-EADD83E92B77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dll_Byte_Bank", "ClassLibrary1\Dll_Byte_Bank.csproj", "{29A30051-BB3E-4B50-8F79-EADD83E92B77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

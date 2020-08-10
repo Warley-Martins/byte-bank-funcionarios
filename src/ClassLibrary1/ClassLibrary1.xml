@@ -1,0 +1,514 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dll_Byte_Bank</name>
+    </assembly>
+    <members>
+        <member name="T:_2_ByteBank.Cliente">
+             <summary>
+            Cliente do banco ByteBanks
+             </summary>
+        </member>
+        <member name="M:_2_ByteBank.Cliente.#ctor">
+            <summary>
+            Contrutor default
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Cliente.#ctor(System.String,System.String)">
+            <summary>
+            Construtor do cliente
+            </summary>
+            <param name="nome">Nome do cliente</param>
+            <param name="cpf">CPF do cliente</param>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="cpf"/>, não pode ser nulo ou vazio</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="nome"/>, não pode ser nulo ou vazio</exception>
+        </member>
+        <member name="P:_2_ByteBank.Cliente.Nome">
+            <summary>
+            Nome do Clinte
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.Cliente.CPF">
+            <summary>
+            CPF do cliente
+            </summary>
+        </member>
+        <member name="F:_2_ByteBank.Cliente.contaCorrente">
+            <summary>
+            Conta Corrente do cliente
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Cliente.Equals(System.Object)">
+            <summary>
+            Realiza a comparação entre dois clientes
+            </summary>
+            <param name="obj">Recebe um cliente</param>
+            <returns>Retorna o valor logico da comparação</returns>
+        </member>
+        <member name="M:_2_ByteBank.Cliente.ToString">
+            <summary>
+            Dados do cliente
+            </summary>
+            <returns>Retorna uma string com os dados do cliente</returns>
+        </member>
+        <member name="T:_2_ByteBank.ContaCorrente">
+            <summary>
+            Conta corrente do banco ByteBank
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.ContaCorrente.#ctor">
+            <summary>
+            Contrutor default
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.ContaCorrente.#ctor(_2_ByteBank.Cliente,System.Int32,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="titular"></param>
+            <param name="agencia"></param>
+            <param name="conta"></param>
+            <param name="senha"></param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="titular"/>, referência não definida</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="agencia"/>, não pode ser menor ou igual a 0(zero)</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="conta"/>, não pode ser menor ou igual a 0(zero)</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="senha"/>, não pode ser nulo ou vazio</exception>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.Taxa">
+            <summary>
+            Taxa de operções bancarias
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.QuantidadeContas">
+            <summary>
+            Quantidade de contas no banco
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.Titular">
+            <summary>
+            Titular da conta corrente
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.Senha">
+            <summary>
+            Senha da conta corrente
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.Saldo">
+            <summary>
+            Saldo da conta corrente
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.Agencia">
+            <summary>
+            Numero de agência da conta corrente
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.Conta">
+            <summary>
+            Numero da conta
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.ContaCorrente.ContadorSaquesNaoPermitidos">
+            <summary>
+            Numero de tentativas que o usuario tentou realizar uma operação não permitida
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.ContaCorrente.ToString">
+            <summary>
+            Dados da conta bancaria
+            </summary>
+            <returns>Retorna uma string com os dados da conta</returns>
+        </member>
+        <member name="T:_2_ByteBank.OrganizadorBonificacao">
+            <summary>
+            Organiza o salario dos funcionarios
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.OrganizadorBonificacao.#ctor">
+            <summary>
+            Construtor default
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.OrganizadorBonificacao.SetBonificacao(System.Double)">
+            <summary>
+            Atribuição ao montante de bonificações
+            </summary>
+            <param name="bonificacao">Bonificação de um funcionario</param>
+        </member>
+        <member name="M:_2_ByteBank.OrganizadorBonificacao.GetBonificacao">
+            <summary>
+            Valor da bonificações
+            </summary>
+            <returns>Retorna o montante destinado a bonificação</returns>
+        </member>
+        <member name="T:_2_ByteBank.BancoDeDados.OrganizadorClientes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.BancoDeDados.OrganizadorClientes.Logar(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cpfClienteLogin"></param>
+            <param name="senhaContaCorrente"></param>
+            <returns></returns>
+        </member>
+        <member name="T:_2_ByteBank.Funcionarios.OrganizadorFuncionarios">
+            <summary>
+            Salva os dados dos funcionarios da empresa
+            </summary>
+        </member>
+        <member name="T:_2_ByteBank.Funcionarios.Diretor">
+            <summary>
+            Funcionario do tipo Diretor
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.#ctor(System.String,System.String,System.String)">
+             <summary>
+            Contrutor do Diretor 
+             </summary>
+             <param name="cpf">CPF do Diretor</param>
+             <param name="nome">Nome do Diretor</param>
+             <param name="senha">Senha de login do Diretor</param>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.#ctor">
+            <summary>
+            Construtor Default
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.ContratrarFuncionario(_2_ByteBank.Funcionarios.Funcionario)">
+            <summary>
+            Realiza o cadastratamento do funcionario no sistema
+            </summary>
+            <param name="funcionarioContratado">Novo funcionario</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="funcionarioContratado"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.DemitirFuncionario(_2_ByteBank.Funcionarios.Funcionario)">
+            <summary>
+            Realiza a exlusão do funcionario no sistema
+            </summary>
+            <param name="funcionarioDemitido">Funcionario Demitido</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="funcionarioDemitido"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.ProcurarFuncionario(System.String)">
+            <summary>
+            Procura um funcionario no sistema
+            </summary>
+            <param name="cpfFuncionarioProcurado">CPF do funcionario procurado</param>
+            <returns>Retorna o funcionario, se encontrado</returns>
+            <exception cref="T:System.ArgumentException">No parametrp: <paramref name="cpfFuncionarioProcurado"/>, string nula ou vazia</exception>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.CadastrarCliente(_2_ByteBank.Cliente)">
+            <summary>
+            Realiza o cadastratamento de um novo cliente no sistema
+            </summary>
+            <param name="novoCliente">Novo cliente</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="novoCliente"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.CadastrarContaCorrente(_2_ByteBank.Cliente,_2_ByteBank.ContaCorrente)">
+            <summary>
+            Realiza o cadastro de uma conta Conrrente no sistema
+            </summary>
+            <param name="cliente">Cliente titular da conta</param>
+            <param name="novaContaCorrente">Nova conta corrente</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="cliente"/>, referência não definida</exception>  
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="novaContaCorrente"/>, referência não definida</exception>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.ProcurarConta(System.Int32,System.Int32,_2_ByteBank.Cliente)">
+            <summary>
+            Procura uma conta no sistema
+            </summary>
+            <param name="numeroAgenciaProcurado">Numero da agencia procurada</param>
+            <param name="numeroContaProcurado">Numero da canta procurada</param>
+            <param name="titularProcurado">Titular da conta procurada</param>
+            <returns>Retorna uma conta corrente, se encontrado</returns>
+            <exception cref="T:System.ArgumentException">No parametro: <paramref name="numeroAgenciaProcurado"/>, string nula ou vazia</exception>
+            <exception cref="T:System.ArgumentException">No parametro: <paramref name="numeroContaProcurado"/>, string nula ou vazia</exception>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="titularProcurado"/>, Referencia não definida</exception>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.ToString">
+            <summary>
+            Dados do funcionario do RH
+            </summary>
+            <returns>Retorna uma string com os dados do RH</returns>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.Equals(System.Object)">
+            <summary>
+            Realiza a compração entre dois objetos de tipo RecursosHumanos
+            </summary>
+            <param name="obj">Funcionario do RH a ser comparado</param>
+            <returns>Retorna o valor logico da comparação</returns>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.AgendarReuniao">
+            <summary>
+            Agenda uma reuniao entre os funcionarios
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Diretor.PrintarContasBancarias">
+            <summary>
+            Printa as contas mensais do banco
+            </summary>
+        </member>
+        <member name="T:_2_ByteBank.Funcionarios.Funcionario">
+            <summary>
+            Funcionario do banco
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Funcionario.#ctor">
+            <summary>
+            Construtor default
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Funcionario.#ctor(System.String,System.String,System.Double,System.String,System.Double)">
+            <summary>
+            Construtor padrão dos funcionarios do banco
+            </summary>
+            <param name="cpf">CPF do funcionario</param>
+            <param name="nome">Nome do funcionario</param>
+            <param name="salario">Salario do funcionario</param>
+            <param name="senha">Senha do funcionario</param>
+            <param name="bonusSalarial">Bonus salarial do funcionario</param>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="cpf"/>, não pode ser nulo ou vazio</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="nome"/>, não pode ser nulo ou vazio</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="salario"/>, não pode ser menor ou igual a 0(zero)</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="senha"/>, não pode ser nulo ou vazio</exception>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="bonusSalarial"/>, não pode ser menor que 0(zero)</exception>
+        </member>
+        <member name="P:_2_ByteBank.Funcionarios.Funcionario.TotalFuncionarios">
+            <summary>
+            Total de funcionarios no banco
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.Funcionarios.Funcionario.Nome">
+            <summary>
+            Nome do funcionario
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.Funcionarios.Funcionario.CPF">
+            <summary>
+            CPF do funcionario
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.Funcionarios.Funcionario.Salario">
+            <summary>
+            Salario do funcionario
+            </summary>
+        </member>
+        <member name="P:_2_ByteBank.Funcionarios.Funcionario.BonusSalarial">
+            <summary>
+            Bonificação do funcionario
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Funcionario.GetSenha">
+            <summary>
+            Senha do funcionario
+            </summary>
+            <returns>Retorna a senha do funcionario </returns>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Funcionario.SetSenha(System.String,System.String)">
+            <summary>
+            Atualiza a senha do funcionario
+            </summary>
+            <param name="senhaAtual">Senha atual do funcionario</param>
+            <param name="novaSenha">Nova senha do funcionario</param>
+            <returns>Retorna o resultado lógico da operação</returns>
+        </member>
+        <member name="T:_2_ByteBank.Funcionarios.GerenteDeConta">
+            <summary>
+            Funcionario do tipo GerenteDeConta
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.GerenteDeConta.#ctor(System.String,System.String,System.String)">
+             <summary>
+            Contrutor do Gerente de Contas
+             </summary>
+             <param name="cpf">CPF do Gerente de Contas</param>
+             <param name="nome">Nome do Gerente de Contas</param>
+             <param name="senha">Senha de login do Gerente de Contas</param>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.GerenteDeConta.#ctor">
+            <summary>
+            Construtor default
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.GerenteDeConta.CadastrarCliente(_2_ByteBank.Cliente)">
+            <summary>
+            Realiza o cadastratamento de um novo cliente no sistema
+            </summary>
+            <param name="novoCliente">Novo cliente</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="novoCliente"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.GerenteDeConta.CadastrarContaCorrente(_2_ByteBank.Cliente,_2_ByteBank.ContaCorrente)">
+            <summary>
+            Realiza o cadastro de uma conta Conrrente no sistema
+            </summary>
+            <param name="cliente">Cliente titular da conta</param>
+            <param name="novaContaCorrente">Nova conta corrente</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="cliente"/>, referência não definida</exception>  
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="novaContaCorrente"/>, referência não definida</exception>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.GerenteDeConta.ProcurarConta(System.Int32,System.Int32,_2_ByteBank.Cliente)">
+            <summary>
+            Procura uma conta no sistema
+            </summary>
+            <param name="numeroAgenciaProcurado">Numero da agencia procurada</param>
+            <param name="numeroContaProcurado">Numero da canta procurada</param>
+            <param name="titularProcurado">Titular da conta procurada</param>
+            <returns>Retorna uma conta corrente, se encontrado</returns>
+            <exception cref="T:System.ArgumentException">No parametro: <paramref name="numeroAgenciaProcurado"/>, string nula ou vazia</exception>
+            <exception cref="T:System.ArgumentException">No parametro: <paramref name="numeroContaProcurado"/>, string nula ou vazia</exception>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="titularProcurado"/>, Referencia não definida</exception>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.GerenteDeConta.ToString">
+            <summary>
+            Dados do funcionario do RH
+            </summary>
+            <returns>Retorna uma string com os dados do RH</returns>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.GerenteDeConta.Equals(System.Object)">
+            <summary>
+            Realiza a compração entre dois objetos de tipo RecursosHumanos
+            </summary>
+            <param name="obj">Funcionario do RH a ser comparado</param>
+            <returns>Retorna o valor logico da comparação</returns>
+        </member>
+        <member name="T:_2_ByteBank.Funcionarios.RecursosHumanos">
+            <summary>
+            Funcionario do Recursos Humanos do banco
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.RecursosHumanos.#ctor(System.String,System.String,System.String)">
+             <summary>
+            Contrutor do RH 
+             </summary>
+             <param name="cpf">CPF do RH</param>
+             <param name="nome">Nome do RH</param>
+             <param name="senha">Senha de login do RH</param>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.RecursosHumanos.#ctor">
+            <summary>
+            Controtor default
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.RecursosHumanos.ContratrarFuncionario(_2_ByteBank.Funcionarios.Funcionario)">
+            <summary>
+            Realiza o cadastratamento do funcionario no sistema
+            </summary>
+            <param name="funcionarioContratado">Novo funcionario</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="funcionarioContratado"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.RecursosHumanos.DemitirFuncionario(_2_ByteBank.Funcionarios.Funcionario)">
+            <summary>
+            Realiza a exlusão do funcionario no sistema
+            </summary>
+            <param name="funcionarioDemitido">Funcionario Demitido</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="funcionarioDemitido"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.RecursosHumanos.ProcurarFuncionario(System.String)">
+            <summary>
+            Procura um funcionario no sistema
+            </summary>
+            <param name="cpfFuncionarioProcurado">CPF do funcionario procurado</param>
+            <returns>Retorna o funcionario, se encontrado</returns>
+            <exception cref="T:System.ArgumentException">No parametrp: <paramref name="cpfFuncionarioProcurado"/>, string nula ou vazia</exception>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.RecursosHumanos.ToString">
+            <summary>
+            Dados do funcionario do RH
+            </summary>
+            <returns>Retorna uma string com os dados do RH</returns>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.RecursosHumanos.Equals(System.Object)">
+            <summary>
+            Realiza a compração entre dois objetos de tipo RecursosHumanos
+            </summary>
+            <param name="obj">Funcionario do RH a ser comparado</param>
+            <returns>Retorna o valor logico da comparação</returns>
+        </member>
+        <member name="T:_2_ByteBank.Interfaces.IControleConta">
+            <summary>
+            Define os metodos basicos para o controle de uma conta bancaria
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.IControleConta.CadastrarCliente(_2_ByteBank.Cliente)">
+            <summary>
+            Realiza o cadastratamento de um novo cliente no sistema
+            </summary>
+            <param name="novoCliente">Novo cliente</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="novoCliente"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.IControleConta.CadastrarContaCorrente(_2_ByteBank.Cliente,_2_ByteBank.ContaCorrente)">
+            <summary>
+            Realiza o cadastro de uma conta Conrrente no sistema
+            </summary>
+            <param name="cliente">Cliente titular da conta</param>
+            <param name="novaContaCorrente">Nova conta corrente</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="cliente"/>, referência não definida</exception>  
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="novaContaCorrente"/>, referência não definida</exception>
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.IControleConta.ProcurarConta(System.Int32,System.Int32,_2_ByteBank.Cliente)">
+            <summary>
+            Procura uma conta no sistema
+            </summary>
+            <param name="numeroAgencia">Numero da agencia procurada</param>
+            <param name="numeroConta">Numero da canta procurada</param>
+            <param name="titular">Titular da conta procurada</param>
+            <returns>Retorna uma conta corrente, se encontrado</returns>
+            <exception cref="T:System.ArgumentException">No parametro: <paramref name="numeroAgencia"/>, string nula ou vazia</exception>
+            <exception cref="T:System.ArgumentException">No parametro: <paramref name="numeroConta"/>, string nula ou vazia</exception>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="titular"/>, Referencia não definida</exception>
+        </member>
+        <member name="T:_2_ByteBank.Interfaces.IControleFuncionario">
+            <summary>
+            Metodos basicos para controle de conta
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.IControleFuncionario.ContratrarFuncionario(_2_ByteBank.Funcionarios.Funcionario)">
+            <summary>
+            Realiza o cadastratamento do funcionario no sistema
+            </summary>
+            <param name="funcionarioContratado">Novo funcionario</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="funcionarioContratado"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.IControleFuncionario.DemitirFuncionario(_2_ByteBank.Funcionarios.Funcionario)">
+            <summary>
+            Realiza a exlusão do funcionario no sistema
+            </summary>
+            <param name="funcionarioDemitido">Funcionario Demitido</param>
+            <exception cref="T:System.NullReferenceException">No parametro: <paramref name="funcionarioDemitido"/>, referência não definida</exception>  
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.IControleFuncionario.ProcurarFuncionario(System.String)">
+            <summary>
+            Procura um funcionario no sistema
+            </summary>
+            <param name="cpfFuncionarioProcurado">CPF do funcionario procurado</param>
+            <returns>Retorna o funcionario, se encontrado</returns>
+            <exception cref="T:System.ArgumentException">No parametrp: <paramref name="cpfFuncionarioProcurado"/>, string nula ou vazia</exception>
+        </member>
+        <member name="T:_2_ByteBank.Interfaces.ILogarCliente">
+            <summary>
+            Login do cliente do banco
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.ILogarCliente.Logar(System.String,System.String)">
+            <summary>
+            Realiza a validação do login
+            </summary>
+            <param name="cpf">CPF do cliente</param>
+            <param name="senha">Senha do cliente</param>
+            <returns></returns>
+        </member>
+        <member name="T:_2_ByteBank.Interfaces.IReuniao">
+            <summary>
+            Agendamento de reuniao
+            </summary>
+        </member>
+        <member name="M:_2_ByteBank.Interfaces.IReuniao.AgendarReuniao">
+            <summary>
+            Agenda uma reuniao entre os funcionarios
+            </summary>
+        </member>
+    </members>
+</doc>

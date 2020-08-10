@@ -7,3 +7,5 @@
 /src/_2_ByteBank/obj
 /src/.vs/_2_ByteBank/v16
 /src/ClassLibrary1/obj
+/src/.vs/_2_ByteBank/DesignTimeBuild
+/src/ClassLibrary1/bin/Debug/netcoreapp3.1
