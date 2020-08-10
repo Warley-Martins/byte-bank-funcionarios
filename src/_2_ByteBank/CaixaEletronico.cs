@@ -18,7 +18,7 @@ namespace _2_ByteBank
         {
             ContaCorrente ContaGenerica = new ContaCorrente(titular, agencia, conta, senha);
             contas.Add(ContaGenerica);
-            ContaGenerica.PrintarDados();
+//            ContaGenerica.PrintarDados();
         }
 
         /*   Na junção dos codigos utilizar interface IAutenticar ou ILogar   */
@@ -64,7 +64,7 @@ namespace _2_ByteBank
             {
                 if (usuario.Agencia == agencia && usuario.Conta == conta && usuario.Titular.CPF == cpfTitularTransferencia)
                 {
-                    usuario.PrintarDadosTransferencia();
+                   // usuario.PrintarDadosTransferencia();
                     return usuario;
                 }
             }

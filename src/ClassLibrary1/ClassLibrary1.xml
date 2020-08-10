@@ -510,5 +510,18 @@
             Agenda uma reuniao entre os funcionarios
             </summary>
         </member>
+        <member name="T:Dll_Byte_Bank.ExtratorArgumentosURL">
+            <summary>
+            Extrai argumentos de uma url
+            </summary>
+        </member>
+        <member name="M:Dll_Byte_Bank.ExtratorArgumentosURL.ExtrairArgumento(System.String,System.String)">
+            <summary>
+            Realiza a extração dos argumentos de uma url
+            </summary>
+            <param name="url">URL que sera extraida o argumento</param>
+            <param name="nomeParametro">Parametro que contem o argumento desejado</param>
+            <returns>Retorna o argumento procurado</returns>
+        </member>
     </members>
 </doc>
