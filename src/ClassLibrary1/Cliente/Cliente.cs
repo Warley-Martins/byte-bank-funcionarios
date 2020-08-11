@@ -38,6 +38,7 @@ namespace _2_ByteBank
             }
             this.Nome = nome;
             this.CPF = cpf;
+            this.DataInicializacao = DateTime.Now;
         }
 
         /// <summary>
@@ -48,6 +49,14 @@ namespace _2_ByteBank
         /// CPF do cliente
         /// </summary>
         public string CPF { get; set; }
+        /// <summary>
+        /// Telefone celular do cliente
+        /// </summary>
+        public string telefone { get; set; }
+        /// <summary>
+        /// Data na qual o usuario se tornou cliente
+        /// </summary>
+        public DateTime DataInicializacao;
         /// <summary>
         /// Conta Corrente do cliente
         /// </summary>
@@ -74,6 +83,7 @@ namespace _2_ByteBank
         {
             return $"\nNome: {this.Nome}" +
                    $"\nCPF: {this.CPF}" +
+                   $"\nData de Inicialização: {DataInicializacao.ToString()}" +
                    $"\nConta bancaria:" +
                    $"\nAgencia {this.contaCorrente.Agencia} Conta {this.contaCorrente.Conta}";
         }

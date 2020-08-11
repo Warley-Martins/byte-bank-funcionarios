@@ -33,6 +33,16 @@
             CPF do cliente
             </summary>
         </member>
+        <member name="P:_2_ByteBank.Cliente.telefone">
+            <summary>
+            Telefone celular do cliente
+            </summary>
+        </member>
+        <member name="F:_2_ByteBank.Cliente.DataInicializacao">
+            <summary>
+            Data na qual o usuario se tornou cliente
+            </summary>
+        </member>
         <member name="F:_2_ByteBank.Cliente.contaCorrente">
             <summary>
             Conta Corrente do cliente

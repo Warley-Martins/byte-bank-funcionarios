@@ -10,14 +10,12 @@ namespace _2_ByteBank
     {        
         static void Main(string[] args)
         {
-            Console.WriteLine("\n\tPrograma ainda incompleto" +
-                              "\n\tCliente + Funcionario");
-            string url = "dnfuasbnuigbuisdbguib?arguMenTo1=olaMundo&Argumento2=oiProgramador";
-            ExtratorArgumentosURL Extrator = new ExtratorArgumentosURL();
-            Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento1"));
-            Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento2"));
-
-
+            //Console.WriteLine("\n\tPrograma ainda incompleto" +
+            //                  "\n\tCliente + Funcionario");
+            //string url = "dnfuasbnuigbuisdbguib?arguMenTo1=olaMundo&Argumento2=oiProgramador";
+            //ExtratorArgumentosURL Extrator = new ExtratorArgumentosURL();
+            //Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento1"));
+            //Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento2"));
         }
     }
 }
