@@ -87,6 +87,29 @@ namespace _2_ByteBank
                    $"\nConta bancaria:" +
                    $"\nAgencia {this.contaCorrente.Agencia} Conta {this.contaCorrente.Conta}";
         }
-
+        /// <summary>
+        /// Ordena dois objetos do tipo Cliente
+        /// </summary>
+        /// <param name="obj">Cliente a ser comparado</param>
+        /// <returns>Retorna o valor padrão</returns>
+        /// <exception cref="ArgumentException">O parametro: <paramref name="obj"/>, deve ser um Cliente</exception>
+        public virtual int CompareTo(object obj)
+        {
+            Cliente c = obj as Cliente;
+            if (c == null)
+            {
+                throw new NullReferenceException("Referecia não definida com Funcionario");
+            }
+            if (this.contaCorrente.Agencia > c.contaCorrente.Agencia)
+            {
+                return 1;
+            }
+            else if (this.contaCorrente.Agencia < c.contaCorrente.Agencia)
+            {
+                return -1;
+            }
+            else
+                return 0;
+        }
     }
 }

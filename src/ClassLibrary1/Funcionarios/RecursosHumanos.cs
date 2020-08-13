@@ -48,6 +48,7 @@ namespace _2_ByteBank.Funcionarios
         {
             ValidarFuncionario(funcionarioDemitido);
             OrganizadorFuncionarios.Funcionarios.Remove(funcionarioDemitido);
+            OrganizadorFuncionarios.Funcionarios.Sort();
         }
 
         /// <summary>

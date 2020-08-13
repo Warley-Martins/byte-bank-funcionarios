@@ -64,6 +64,7 @@ namespace _2_ByteBank.Funcionarios
             }
 
             cliente.contaCorrente = novaContaCorrente;
+            OrganizadorClientes.Clientes.Sort();
         }
         /// <summary>
         /// Procura uma conta no sistema

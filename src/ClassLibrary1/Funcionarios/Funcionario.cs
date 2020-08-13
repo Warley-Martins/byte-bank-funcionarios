@@ -7,7 +7,7 @@ namespace _2_ByteBank.Funcionarios
     /// <summary>
     /// Funcionario do banco
     /// </summary>
-    public abstract class Funcionario
+    public abstract class Funcionario : IComparable
     {
         /// <summary>
         /// Construtor default
@@ -106,6 +106,30 @@ namespace _2_ByteBank.Funcionarios
             else
                 return false;
 
+        }
+        /// <summary>
+        /// Ordena dois objetos do tipo Funcionario pelo salario
+        /// </summary>
+        /// <param name="obj">Funcionario a ser comparado</param>
+        /// <returns>Retorna o valor padrão</returns>
+        /// <exception cref="ArgumentException">O parametro: <paramref name="obj"/>, deve ser um Funcionario</exception>
+        public virtual int CompareTo(object obj)
+        {
+            Funcionario f = obj as Funcionario;
+            if (obj == null)
+            {
+                throw new NullReferenceException("Referecia não definida com Funcionario");
+            }
+            if (this.Salario > f.Salario)
+            {
+                return -1;
+            }
+            else if (this.Salario < f.Salario)
+            {
+                return 1;
+            }
+            else
+                return 0;
         }
     }
 }

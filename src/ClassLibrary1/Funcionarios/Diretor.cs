@@ -39,6 +39,7 @@ namespace _2_ByteBank.Funcionarios
         {
             ValidarFuncionario(funcionarioContratado);
             OrganizadorFuncionarios.Funcionarios.Add(funcionarioContratado);
+            OrganizadorFuncionarios.Funcionarios.Sort();
         }
         /// <summary>
         /// Realiza a exlusão do funcionario no sistema
@@ -103,6 +104,7 @@ namespace _2_ByteBank.Funcionarios
             }
 
             cliente.contaCorrente = novaContaCorrente;
+            OrganizadorClientes.Clientes.Sort();
         }
         /// <summary>
         /// Procura uma conta no sistema

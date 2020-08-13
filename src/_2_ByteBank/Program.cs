@@ -25,6 +25,7 @@ namespace _2_ByteBank
             //ExtratorArgumentosURL Extrator = new ExtratorArgumentosURL();
             //Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento1"));
             //Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento2"));
+
         }
     }
 }
