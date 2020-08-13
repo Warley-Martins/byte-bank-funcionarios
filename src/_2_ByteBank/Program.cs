@@ -1,6 +1,7 @@
 ﻿using _2_ByteBank.BancoDeDados;
 using _2_ByteBank.Funcionarios;
 using Dll_Byte_Bank;
+using Dll_Byte_Bank.MetodosDeExtensao;
 using Humanizer;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,12 @@ namespace _2_ByteBank
     {
         static void Main(string[] args)
         {
+            var d = new Diretor();
+            var gc = new Cliente();
+            var gc2 = new Cliente();
+            d.AdicionarVariosClientes(gc, gc2);
 
-            List<string> l = new List<string> { "xjichnuina", "diposji" };
-            Console.WriteLine(l[0]);
 
-   
             //Console.WriteLine("\n\tPrograma ainda incompleto" +
             //                  "\n\tCliente + Funcionario");
             //string url = "dnfuasbnuigbuisdbguib?arguMenTo1=olaMundo&Argumento2=oiProgramador";

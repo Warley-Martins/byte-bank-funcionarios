@@ -542,5 +542,22 @@
             <exception cref="T:System.ArgumentException">O parametro: <paramref name="urlDominio"/> não pode ser nulo ou vazio</exception>
             /// <exception cref="T:System.ArgumentException">O parametro: <paramref name="urlSite"/> não pode ser nulo ou vazio</exception>
         </member>
+        <member name="T:Dll_Byte_Bank.MetodosDeExtensao.MetodosDeExtensaoList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dll_Byte_Bank.MetodosDeExtensao.MetodosDeExtensaoList.AdicionarVariosFuncionarios(_2_ByteBank.Funcionarios.Funcionario,_2_ByteBank.Funcionarios.Funcionario[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Dll_Byte_Bank.MetodosDeExtensao.MetodosDeExtensaoList.AdicionarVariosClientes(_2_ByteBank.Funcionarios.Funcionario,_2_ByteBank.Cliente[])">
+            <summary>
+            
+            </summary>
+            <param name="funcionario"></param>
+            <param name="novosClientes"></param>
+        </member>
     </members>
 </doc>
