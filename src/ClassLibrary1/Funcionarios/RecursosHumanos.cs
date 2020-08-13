@@ -1,6 +1,7 @@
 ﻿using _2_ByteBank.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace _2_ByteBank.Funcionarios
@@ -36,7 +37,7 @@ namespace _2_ByteBank.Funcionarios
         public void ContratrarFuncionario(Funcionario funcionarioContratado)
         {
             ValidarFuncionario(funcionarioContratado);
-            OrganizadorFuncionarios.funcionarios.Add(funcionarioContratado);
+            OrganizadorFuncionarios.Funcionarios.Add(funcionarioContratado);
         }
         /// <summary>
         /// Realiza a exlusão do funcionario no sistema
@@ -46,7 +47,7 @@ namespace _2_ByteBank.Funcionarios
         public void DemitirFuncionario(Funcionario funcionarioDemitido)
         {
             ValidarFuncionario(funcionarioDemitido);
-            OrganizadorFuncionarios.funcionarios.Remove(funcionarioDemitido);
+            OrganizadorFuncionarios.Funcionarios.Remove(funcionarioDemitido);
         }
 
         /// <summary>
@@ -62,10 +63,9 @@ namespace _2_ByteBank.Funcionarios
                 throw new ArgumentException("Referencia não definida para cpf", nameof(cpfFuncionarioProcurado));
             }
 
-            foreach (var funcionario in OrganizadorFuncionarios.funcionarios)
-                if (funcionario.CPF == cpfFuncionarioProcurado)
-                    return funcionario;
-            return null;
+            return OrganizadorFuncionarios.Funcionarios.Where(f =>
+                                                        f.CPF.Equals(cpfFuncionarioProcurado)
+                                                        ).FirstOrDefault();
         }
 
         /// <summary>

@@ -130,6 +130,13 @@
             </summary>
             <returns>Retorna uma string com os dados da conta</returns>
         </member>
+        <member name="M:_2_ByteBank.ContaCorrente.Equals(System.Object)">
+            <summary>
+            Compara duas contas correntes
+            </summary>
+            <param name="obj">Conta corrente a ser comparada</param>
+            <returns>Retorna o valor logico da comparação</returns>
+        </member>
         <member name="T:_2_ByteBank.OrganizadorBonificacao">
             <summary>
             Organiza o salario dos funcionarios
@@ -156,14 +163,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="M:_2_ByteBank.BancoDeDados.OrganizadorClientes.Logar(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="cpfClienteLogin"></param>
-            <param name="senhaContaCorrente"></param>
-            <returns></returns>
         </member>
         <member name="T:_2_ByteBank.Funcionarios.OrganizadorFuncionarios">
             <summary>
@@ -520,18 +519,28 @@
             Agenda uma reuniao entre os funcionarios
             </summary>
         </member>
-        <member name="T:Dll_Byte_Bank.ExtratorArgumentosURL">
+        <member name="T:Dll_Byte_Bank.ManipulacaoURL">
             <summary>
             Extrai argumentos de uma url
             </summary>
         </member>
-        <member name="M:Dll_Byte_Bank.ExtratorArgumentosURL.ExtrairArgumento(System.String,System.String)">
+        <member name="M:Dll_Byte_Bank.ManipulacaoURL.ExtrairArgumento(System.String,System.String)">
             <summary>
             Realiza a extração dos argumentos de uma url
             </summary>
             <param name="url">URL que sera extraida o argumento</param>
             <param name="nomeParametro">Parametro que contem o argumento desejado</param>
             <returns>Retorna o argumento procurado</returns>
+        </member>
+        <member name="M:Dll_Byte_Bank.ManipulacaoURL.ConferirDominio(System.String,System.String)">
+            <summary>
+            Confere o site pertence ao site dominio
+            </summary>
+            <param name="urlSite">Url testada</param>
+            <param name="urlDominio">Url do site dominio</param>
+            <returns>Retorna o valor logico da comparação</returns>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="urlDominio"/> não pode ser nulo ou vazio</exception>
+            /// <exception cref="T:System.ArgumentException">O parametro: <paramref name="urlSite"/> não pode ser nulo ou vazio</exception>
         </member>
     </members>
 </doc>

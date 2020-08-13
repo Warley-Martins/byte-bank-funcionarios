@@ -100,7 +100,11 @@ namespace _2_ByteBank
                    $"\nAgencia: {Agencia}" +
                    $"\nConta: {Conta}";
         }
-
+        /// <summary>
+        /// Compara duas contas correntes
+        /// </summary>
+        /// <param name="obj">Conta corrente a ser comparada</param>
+        /// <returns>Retorna o valor logico da comparação</returns>
         public override bool Equals(object obj)
         {
             ContaCorrente conta = obj as ContaCorrente;

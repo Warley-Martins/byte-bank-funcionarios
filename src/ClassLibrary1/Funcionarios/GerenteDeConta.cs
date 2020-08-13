@@ -2,6 +2,7 @@
 using _2_ByteBank.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace _2_ByteBank.Funcionarios
@@ -41,7 +42,7 @@ namespace _2_ByteBank.Funcionarios
                 throw new NullReferenceException("Referencia não definida para Cliente");
             }
 
-            OrganizadorClientes.clientes.Add(novoCliente);
+            OrganizadorClientes.Clientes.Add(novoCliente);
         }
 
         /// <summary>
@@ -89,13 +90,15 @@ namespace _2_ByteBank.Funcionarios
                 throw new NullReferenceException("Referencia não definida para Cliente Procurado");
             }
 
-            foreach (var Titular in OrganizadorClientes.clientes)
-                if (Titular == titularProcurado &&
-                    Titular.contaCorrente.Agencia == numeroAgenciaProcurado &&
-                        Titular.contaCorrente.Conta == numeroContaProcurado)
-                    return Titular.contaCorrente;
-            return null;
+            var y = OrganizadorClientes.Clientes.Where(x =>
+                                            (x.CPF == titularProcurado.CPF) && 
+                                            (x.contaCorrente.Agencia == numeroAgenciaProcurado) && 
+                                            (x.contaCorrente.Conta == numeroAgenciaProcurado)
+                                            ).FirstOrDefault();
+            return y.contaCorrente;
+           
         }
+
         /// <summary>
         /// Dados do funcionario do RH
         /// </summary>

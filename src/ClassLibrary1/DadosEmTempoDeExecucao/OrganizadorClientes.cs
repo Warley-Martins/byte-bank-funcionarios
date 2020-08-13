@@ -10,6 +10,6 @@ namespace _2_ByteBank.BancoDeDados
     /// </summary>
     public static class OrganizadorClientes 
     {
-        internal static  List<Cliente> clientes = new List<Cliente>();
+        internal static  List<Cliente> Clientes = new List<Cliente>();
     }
 }

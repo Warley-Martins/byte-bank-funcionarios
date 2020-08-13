@@ -10,6 +10,6 @@ namespace _2_ByteBank.Funcionarios
     /// </summary>
     public static class OrganizadorFuncionarios
     {
-        internal static List<Funcionario> funcionarios = new List<Funcionario>();
+        internal static List<Funcionario> Funcionarios = new List<Funcionario>();
     }
 }
