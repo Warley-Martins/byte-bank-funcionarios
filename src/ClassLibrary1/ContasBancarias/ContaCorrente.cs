@@ -28,11 +28,11 @@ namespace _2_ByteBank
         /// <exception cref="ArgumentException">O parametro: <paramref name="senha"/>, não pode ser nulo ou vazio</exception>
         public ContaCorrente(int agencia, int conta, string senha)
         {
-            if (Agencia <= 0)
+            if (agencia <= 0)
             {
                 throw new ArgumentException("A agencia não pode ser menor ou igual a 0(zero)", nameof(agencia));
             }
-            if(Conta <= 0)
+            if(conta <= 0)
             {
                 throw new ArgumentException("A conta não pode ser menor ou igual a 0(zero)", nameof(conta));
             }
