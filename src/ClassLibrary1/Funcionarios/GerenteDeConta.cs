@@ -101,7 +101,7 @@ namespace _2_ByteBank.Funcionarios
         }
 
         /// <summary>
-        /// Dados do funcionario do RH
+        /// Dados do funcionario Gerente de conta
         /// </summary>
         /// <returns>Retorna uma string com os dados do RH</returns>
         public override string ToString()

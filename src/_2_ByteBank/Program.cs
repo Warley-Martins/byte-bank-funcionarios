@@ -13,19 +13,70 @@ namespace _2_ByteBank
     {
         static void Main(string[] args)
         {
-            var d = new Diretor();
-            var gc = new Cliente();
-            var gc2 = new Cliente();
-            d.AdicionarVariosClientes(gc, gc2);
 
+            Console.WriteLine("Curso .NET - C# -> Prtojeto Final" +
+                              "\nByteBank - Sistema do Funcionário");
 
-            //Console.WriteLine("\n\tPrograma ainda incompleto" +
-            //                  "\n\tCliente + Funcionario");
-            //string url = "dnfuasbnuigbuisdbguib?arguMenTo1=olaMundo&Argumento2=oiProgramador";
-            //ExtratorArgumentosURL Extrator = new ExtratorArgumentosURL();
-            //Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento1"));
-            //Console.WriteLine(Extrator.ExtrairArgumento(url, "argumento2"));
+            do // Inicio do loop do programa
+            {
+                Console.WriteLine("\n\tBem Vindo ao ByteBank Sistema do funcionario");
+                Diretor usuario;
+                do
+                {
+                    usuario = Logar();  
+                } while (usuario != null);
+                Console.WriteLine($"Ola {usuario.Nome}");
+                int opcaoMenu;
+                do
+                {
+                    PrintarMenu();
+                    opcaoMenu = int.Parse(Console.ReadLine());
+                } while (opcaoMenu < 0 || opcaoMenu > 6);
 
+                switch (opcaoMenu)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 0:
+                        Console.WriteLine("\n\tPrograma Encerrado");
+                        break;
+                }
+                // Cadastrar Funcionario
+                // Cadastrar Cliente
+            } while (true); // Fim do loop do programa
+        }
+
+        private static Diretor Logar()
+        {
+            Console.Write("\n\tLogin" +
+                          "\nDigite seu CPF: ");
+            string cpf = Console.ReadLine();
+            Console.Write("Digite sua senha : ");
+            string senha = Console.ReadLine();
+            return new Diretor();
+        }
+
+        private static void PrintarMenu()
+        {
+            Console.Write("Digite a opção desejada" +
+                          "\n(1). Cadastro de Cliente" +
+                          "\n(2). Cadastro de conta bancária" +
+                          "\n(3). Cadastro de funcionário" +
+                          "\n(4). " +
+                          "\n(5). " +
+                          "\n(6). " +
+                          "\n(0). " +
+                          "Opção:  ");
         }
     }
 }

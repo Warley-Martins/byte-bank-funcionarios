@@ -61,6 +61,14 @@
             </summary>
             <returns>Retorna uma string com os dados do cliente</returns>
         </member>
+        <member name="M:_2_ByteBank.Cliente.CompareTo(System.Object)">
+            <summary>
+            Ordena dois objetos do tipo Cliente
+            </summary>
+            <param name="obj">Cliente a ser comparado</param>
+            <returns>Retorna o valor padrão</returns>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="obj"/>, deve ser um Cliente</exception>
+        </member>
         <member name="T:_2_ByteBank.ContaCorrente">
             <summary>
             Conta corrente do banco ByteBank
@@ -323,6 +331,14 @@
             <param name="senhaAtual">Senha atual do funcionario</param>
             <param name="novaSenha">Nova senha do funcionario</param>
             <returns>Retorna o resultado lógico da operação</returns>
+        </member>
+        <member name="M:_2_ByteBank.Funcionarios.Funcionario.CompareTo(System.Object)">
+            <summary>
+            Ordena dois objetos do tipo Funcionario pelo salario
+            </summary>
+            <param name="obj">Funcionario a ser comparado</param>
+            <returns>Retorna o valor padrão</returns>
+            <exception cref="T:System.ArgumentException">O parametro: <paramref name="obj"/>, deve ser um Funcionario</exception>
         </member>
         <member name="T:_2_ByteBank.Funcionarios.GerenteDeConta">
             <summary>
