@@ -4,6 +4,7 @@ using _2_ByteBank.Funcionarios;
 using Dll_Byte_Bank.Excecoes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Dll_Byte_Bank.Sistema
@@ -13,6 +14,26 @@ namespace Dll_Byte_Bank.Sistema
     /// </summary>
     public class Sistema
     {
+        /// <summary>
+        /// Procura o login do funcionario
+        /// </summary>
+        /// <param name="cpf">CPF do funcionario procurado</param>
+        /// <param name="senha">Senha do funcionario procurado</param>
+        /// <returns>Retorna o funcionario</returns>
+        /// <exception cref="ArgumentException">O <paramref name="cpf"/> não pode ser nulo ou vazio</exception>
+        /// <exception cref="ArgumentException">A <paramref name="senha"/> não pode ser nulo ou vazio</exception>
+        public Funcionario Logar(string cpf, string senha)
+        {
+            if(String.IsNullOrEmpty(cpf))
+            {
+                throw new ArgumentException("O CPF não pode ser nulo ou vazio");
+            }
+            if (String.IsNullOrEmpty(senha))
+            {
+                throw new ArgumentException("A senha não pode ser nulo ou vazio");
+            }
+            return OrganizadorFuncionarios.Funcionarios.Where(x => (x.CPF == cpf) && (x.GetSenha() == senha)).FirstOrDefault();
+        }
         /// <summary>
         /// Realiza a admissão de um funcionário
         /// </summary>
@@ -35,9 +56,9 @@ namespace Dll_Byte_Bank.Sistema
         /// <exception cref="NullReferenceException">No parametro: <paramref name="funcionarioDemitido"/>, referencia não definida </exception>
         /// <returns>Retorna o resultado da contratação</returns>
         /// <exception cref="FuncionarioInvalidoException">Caso o funcionario não possua acesso para a operação</exception>
-        public string RemoverFuncionario(Funcionario funcionario, Funcionario funcionarioDemitido)
+        public string RemoverFuncionario(Funcionario funcionario, string cpfFuncionarioDemitido)
         {
-            return OrganizadorFuncionarios.Remover(funcionario, funcionarioDemitido);
+            return OrganizadorFuncionarios.Remover(funcionario, cpfFuncionarioDemitido);
         }
         /// <summary>
         /// Procura um funcionario no sistema
@@ -66,15 +87,16 @@ namespace Dll_Byte_Bank.Sistema
         /// Realiza o cadastro de uma conta Conrrente no sistema
         /// </summary>
         /// <param name="funcionario">Funcionario que realiza o cadastro</param>
+        /// <param name="cpfCliente"></param>
         /// <param name="cliente">Cliente titular da conta</param>
         /// <param name="novaContaCorrente">Nova conta corrente</param>
         /// <exception cref="NullReferenceException">No parametro: <paramref name="cliente"/>, referência não definida</exception>  
         /// <exception cref="NullReferenceException">No parametro: <paramref name="funcionario"/>, referência não definida</exception>  
         /// <exception cref="NullReferenceException">No parametro: <paramref name="novaContaCorrente"/>, referência não definida</exception>
         /// <exception cref="FuncionarioInvalidoException">Caso o funcionario não possua acesso para a operação</exception>
-        public bool CadastrarContaCorrente(Funcionario funcionario, Cliente cliente, ContaCorrente novaContaCorrente)
+        public bool CadastrarContaCorrente(Funcionario funcionario, string cpfCliente, ContaCorrente novaContaCorrente)
         {
-            return OrganizadorClientes.CadastrarContaCorrente(funcionario, cliente, novaContaCorrente);
+            return OrganizadorClientes.CadastrarContaCorrente(funcionario, cpfCliente, novaContaCorrente);
         }
         /// <summary>
         /// Procura uma conta no sistema
@@ -82,16 +104,16 @@ namespace Dll_Byte_Bank.Sistema
         /// <param name="funcionario">Funcionario que realiza o cadastro</param>
         /// <param name="numeroAgenciaProcurado">Numero da agencia procurada</param>
         /// <param name="numeroContaProcurado">Numero da canta procurada</param>
-        /// <param name="titularProcurado">Titular da conta procurada</param>
+        /// <param name="cpfTitularProcurado">Titular da conta procurada</param>
         /// <returns>Retorna uma conta corrente, se encontrado</returns>
         /// <exception cref="ArgumentException">No parametro: <paramref name="numeroAgenciaProcurado"/>, string nula ou vazia</exception>
         /// <exception cref="ArgumentException">No parametro: <paramref name="numeroContaProcurado"/>, string nula ou vazia</exception>
         /// <exception cref="NullReferenceException">No parametro: <paramref name="funcionario"/>, referência não definida</exception>  
-        /// <exception cref="NullReferenceException">No parametro: <paramref name="titularProcurado"/>, Referencia não definida</exception>
+        /// <exception cref="NullReferenceException">No parametro: <paramref name="cpfTitularProcurado"/>, Referencia não definida</exception>
         /// <exception cref="FuncionarioInvalidoException">Caso o funcionario não possua acesso para a operação</exception>
-        public ContaCorrente ProcurarContaCorrente(Funcionario funcionario, int numeroAgenciaProcurado, int numeroContaProcurado, Cliente titularProcurado)
+        public ContaCorrente ProcurarContaCorrente(Funcionario funcionario, int numeroAgenciaProcurado, int numeroContaProcurado, string cpfTitularProcurado)
         {
-            return OrganizadorClientes.ProcurarConta(funcionario, numeroAgenciaProcurado, numeroContaProcurado, titularProcurado);
+            return OrganizadorClientes.ProcurarConta(funcionario, numeroAgenciaProcurado, numeroContaProcurado, cpfTitularProcurado);
         }
     }
 }

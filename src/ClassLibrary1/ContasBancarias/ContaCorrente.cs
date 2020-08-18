@@ -19,7 +19,6 @@ namespace _2_ByteBank
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="titular"></param>
         /// <param name="agencia"></param>
         /// <param name="conta"></param>
         /// <param name="senha"></param>
@@ -27,13 +26,9 @@ namespace _2_ByteBank
         /// <exception cref="ArgumentException">O parametro: <paramref name="agencia"/>, não pode ser menor ou igual a 0(zero)</exception>
         /// <exception cref="ArgumentException">O parametro: <paramref name="conta"/>, não pode ser menor ou igual a 0(zero)</exception>
         /// <exception cref="ArgumentException">O parametro: <paramref name="senha"/>, não pode ser nulo ou vazio</exception>
-        public ContaCorrente(Cliente titular, int agencia, int conta, string senha)
+        public ContaCorrente(int agencia, int conta, string senha)
         {
-            if (titular == null)
-            {
-                throw new NullReferenceException("Referência não definida para titular");
-            }
-                        if (Agencia <= 0)
+            if (Agencia <= 0)
             {
                 throw new ArgumentException("A agencia não pode ser menor ou igual a 0(zero)", nameof(agencia));
             }
@@ -46,7 +41,6 @@ namespace _2_ByteBank
                 throw new ArgumentException("A senha não pode ser nula ou vazia", nameof(senha));
             }
 
-            this.Titular = titular;
             this.Senha = senha;
             this.Agencia = agencia;
             this.Conta = conta;

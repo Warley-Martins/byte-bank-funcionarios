@@ -24,9 +24,11 @@ namespace _2_ByteBank
         /// </summary>
         /// <param name="nome">Nome do cliente</param>
         /// <param name="cpf">CPF do cliente</param>
+        /// <param name="telefone">Telefone do cliente</param>
         /// <exception cref="ArgumentException">O parametro: <paramref name="cpf"/>, não pode ser nulo ou vazio</exception>
         /// <exception cref="ArgumentException">O parametro: <paramref name="nome"/>, não pode ser nulo ou vazio</exception>
-        public Cliente(string nome, string cpf)
+        /// <exception cref="ArgumentException">O parametro: <paramref name="telefone"/>, não pode ser nulo ou vazio</exception>
+        public Cliente(string nome, string cpf, string telefone)
         {
             if (String.IsNullOrEmpty(nome))
             {
@@ -36,8 +38,13 @@ namespace _2_ByteBank
             {
                 throw new ArgumentException("O cpf não pode ser nulo ou vazio", nameof(cpf));
             }
+            if (String.IsNullOrEmpty(telefone))
+            {
+                throw new ArgumentException("O telefone não pode ser nulo ou vazio", nameof(telefone));
+            }
             this.Nome = nome;
             this.CPF = cpf;
+            this.Telefone = telefone;
             this.DataInicializacao = DateTime.Now;
         }
 
@@ -52,7 +59,7 @@ namespace _2_ByteBank
         /// <summary>
         /// Telefone celular do cliente
         /// </summary>
-        public string telefone { get; set; }
+        public string Telefone { get; set; }
         /// <summary>
         /// Data na qual o usuario se tornou cliente
         /// </summary>

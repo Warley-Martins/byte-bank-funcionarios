@@ -12,7 +12,7 @@ namespace _2_ByteBank.Funcionarios
     /// </summary>
     public static class OrganizadorFuncionarios
     {
-        private static List<Funcionario> Funcionarios = new List<Funcionario>()
+        internal static List<Funcionario> Funcionarios = new List<Funcionario>()
                                                     {
                                                         new RecursosHumanos("12345678922", "Bruno", "123"),
                                                         new Diretor("12345678911", "Lucas", "123")
@@ -60,14 +60,14 @@ namespace _2_ByteBank.Funcionarios
         /// Realiza a admissão de um funcionário
         /// </summary>
         /// <param name="funcionario">Funcionario que realiza a demissão</param>
-        /// <param name="funcionarioDemitido">Funcionario Demitido</param>
+        /// <param name="cpfFuncionarioDemitido">Funcionario Demitido</param>
         /// <exception cref="NullReferenceException">No parametro: <paramref name="funcionario"/>, referencia não definida </exception>       
-        /// <exception cref="NullReferenceException">No parametro: <paramref name="funcionarioDemitido"/>, referencia não definida </exception>
+        /// <exception cref="NullReferenceException">No parametro: <paramref name="cpfFuncionarioDemitido"/>, referencia não definida </exception>
         /// <returns>Retorna o resultado da contratação</returns>
         /// <exception cref="FuncionarioInvalidoException">Caso o funcionario não possua acesso para a operação</exception>
-        public static string Remover(Funcionario funcionario, Funcionario funcionarioDemitido)
+        public static string Remover(Funcionario funcionario, string cpfFuncionarioDemitido)
         {
-            if (funcionarioDemitido == null)
+            if (cpfFuncionarioDemitido == null)
             {
                 throw new NullReferenceException("Referencia não definida para o novo funcionario");
             }
@@ -77,7 +77,9 @@ namespace _2_ByteBank.Funcionarios
             }
             if (Logar(funcionario))
             {
-                Funcionarios.Remove(funcionarioDemitido);
+                Funcionario f;
+                f = Funcionarios.Where(x => x.CPF == cpfFuncionarioDemitido).FirstOrDefault();
+                Funcionarios.Remove(f);
                 return "Funcionario Removido Do Sistema";
             }
             throw new FuncionarioInvalidoException("Login Invalido para operação solicitada");

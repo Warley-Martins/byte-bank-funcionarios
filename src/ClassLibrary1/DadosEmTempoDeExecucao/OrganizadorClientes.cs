@@ -13,10 +13,10 @@ namespace _2_ByteBank.BancoDeDados
     /// </summary>
     public static class OrganizadorClientes
     {
-        private static List<Cliente> Clientes = new List<Cliente>()
+        internal static List<Cliente> Clientes = new List<Cliente>()
                                         {
-                                            new Cliente("Pedro", "12345678900"),
-                                            new Cliente("Joao", "78945612300")
+                                            new Cliente("Pedro", "12345678900", "12345678"),
+                                            new Cliente("Joao", "78945612300", "12345678")
                                         };
 
 
@@ -60,17 +60,17 @@ namespace _2_ByteBank.BancoDeDados
         /// Realiza o cadastro de uma conta Conrrente no sistema
         /// </summary>
         /// <param name="funcionario">Funcionario que realiza o cadastro</param>
-        /// <param name="cliente">Cliente titular da conta</param>
+        /// <param name="cpfCliente">CPF do cliente titular da conta</param>
         /// <param name="novaContaCorrente">Nova conta corrente</param>
-        /// <exception cref="NullReferenceException">No parametro: <paramref name="cliente"/>, referência não definida</exception>  
+        /// <exception cref="ArgumentException">O parametro: <paramref name="cpfCliente"/>, não pode ser nulo ou vazio</exception>  
         /// <exception cref="NullReferenceException">No parametro: <paramref name="funcionario"/>, referência não definida</exception>  
         /// <exception cref="NullReferenceException">No parametro: <paramref name="novaContaCorrente"/>, referência não definida</exception>
         /// <exception cref="FuncionarioInvalidoException">Caso o funcionario não possua acesso para a operação</exception>
-        public static bool CadastrarContaCorrente(Funcionario funcionario, Cliente cliente, ContaCorrente novaContaCorrente)
+        public static bool CadastrarContaCorrente(Funcionario funcionario, string cpfCliente, ContaCorrente novaContaCorrente)
         {
-            if (cliente == null)
+            if (String.IsNullOrEmpty(cpfCliente))
             {
-                throw new NullReferenceException("Referencia não definida para cliente");
+                throw new ArgumentException("O cpf do cliente não pode ser nulo ou vazio");
             }
             if (novaContaCorrente == null)
             {
@@ -83,8 +83,13 @@ namespace _2_ByteBank.BancoDeDados
 
             if (Logar(funcionario))
             {
+                Cliente cliente = Clientes.Where(x => x.CPF == cpfCliente).FirstOrDefault();
+                if(cliente == null)
+                {
+                    throw new ClienteIndefindoException("Não há cliente com o cpf informado");
+                }
                 cliente.contaCorrente = novaContaCorrente;
-                OrganizadorClientes.Clientes.Sort();
+                novaContaCorrente.Titular = cliente;
                 return true;
             }
             throw new FuncionarioInvalidoException("Login Invalido para operação solicitada");
@@ -95,14 +100,14 @@ namespace _2_ByteBank.BancoDeDados
         /// <param name="funcionario">Funcionario que realiza o cadastro</param>
         /// <param name="numeroAgenciaProcurado">Numero da agencia procurada</param>
         /// <param name="numeroContaProcurado">Numero da canta procurada</param>
-        /// <param name="titularProcurado">Titular da conta procurada</param>
+        /// <param name="cpfTitularProcurado">CPF do titular da conta procurada</param>
         /// <returns>Retorna uma conta corrente, se encontrado</returns>
         /// <exception cref="ArgumentException">No parametro: <paramref name="numeroAgenciaProcurado"/>, string nula ou vazia</exception>
         /// <exception cref="ArgumentException">No parametro: <paramref name="numeroContaProcurado"/>, string nula ou vazia</exception>
         /// <exception cref="NullReferenceException">No parametro: <paramref name="funcionario"/>, referência não definida</exception>  
-        /// <exception cref="NullReferenceException">No parametro: <paramref name="titularProcurado"/>, Referencia não definida</exception>
+        /// <exception cref="ArgumentException">O parametro: <paramref name="cpfTitularProcurado"/>, nãopode ser nulo ou vazio</exception>
         /// <exception cref="FuncionarioInvalidoException">Caso o funcionario não possua acesso para a operação</exception>
-        public static ContaCorrente ProcurarConta(Funcionario funcionario, int numeroAgenciaProcurado, int numeroContaProcurado, Cliente titularProcurado)
+        public static ContaCorrente ProcurarConta(Funcionario funcionario, int numeroAgenciaProcurado, int numeroContaProcurado, string cpfTitularProcurado)
         {
             if (numeroAgenciaProcurado <= 0)
             {
@@ -112,9 +117,9 @@ namespace _2_ByteBank.BancoDeDados
             {
                 throw new ArgumentException("Numero da agencia não pode ser menor ou igual a 0(zero)", nameof(numeroContaProcurado));
             }
-            if (titularProcurado == null)
+            if (String.IsNullOrEmpty(cpfTitularProcurado))
             {
-                throw new NullReferenceException("Referencia não definida para Cliente Procurado");
+                throw new ArgumentException("O cpf nao pode ser nulo ou vazio");
             }
             if (funcionario == null)
             {
@@ -123,7 +128,7 @@ namespace _2_ByteBank.BancoDeDados
             if (Logar(funcionario))
             {
                 var y = Clientes.Where(x =>
-                                      (x.CPF == titularProcurado.CPF) &&
+                                      (x.CPF == cpfTitularProcurado) &&
                                       (x.contaCorrente.Agencia == numeroAgenciaProcurado) &&
                                       (x.contaCorrente.Conta == numeroAgenciaProcurado)
                                       ).FirstOrDefault();

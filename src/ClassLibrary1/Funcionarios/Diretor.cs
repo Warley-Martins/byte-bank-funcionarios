@@ -52,7 +52,23 @@ namespace _2_ByteBank.Funcionarios
             OrganizadorFuncionarios.Funcionarios.Remove(funcionarioDemitido);
         }
 
+        /// <summary>
+        /// Procura um funcionario no sistema
+        /// </summary>
+        /// <param name="cpfFuncionarioProcurado">CPF do funcionario procurado</param>
+        /// <returns>Retorna o funcionario, se encontrado</returns>
+        /// <exception cref="ArgumentException">No parametrp: <paramref name="cpfFuncionarioProcurado"/>, string nula ou vazia</exception>
+        public Funcionario ProcurarFuncionario(string cpfFuncionarioProcurado)
+        {
+            if (String.IsNullOrEmpty(cpfFuncionarioProcurado))
+            {
+                throw new ArgumentException("Referencia não definida para cpf", nameof(cpfFuncionarioProcurado));
+            }
 
+            return OrganizadorFuncionarios.Funcionarios.Where(f =>
+                                                        f.CPF.Equals(cpfFuncionarioProcurado)
+                                                        ).FirstOrDefault();
+        }
 
         /// <summary>
         /// Realiza o cadastratamento de um novo cliente no sistema

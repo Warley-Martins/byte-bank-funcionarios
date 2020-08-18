@@ -16,7 +16,7 @@ namespace _2_ByteBank
         private List<ContaCorrente> contas;
         public void Cadastrar(Cliente titular, int agencia, int conta, string senha)
         {
-            ContaCorrente ContaGenerica = new ContaCorrente(titular, agencia, conta, senha);
+            ContaCorrente ContaGenerica = new ContaCorrente(agencia, conta, senha);
             contas.Add(ContaGenerica);
 //            ContaGenerica.PrintarDados();
         }
